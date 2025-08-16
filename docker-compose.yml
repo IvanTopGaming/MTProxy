@@ -3,4 +3,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    network_mode: host
+    environment:
+      - MT_PROXY_STAT=8888
+      - MT_PROXY_PORT=443
+    ports:
+      - "443:443"
