@@ -3,6 +3,7 @@ set -e
 
 MT_PROXY_SECRET=$(head -c 16 /dev/urandom | xxd -ps)
 
+echo "Starting MTProxy with secret: $MT_PROXY_SECRET"
 exec ./mtproto-proxy \
     -u nobody \
     -p 8888 \
